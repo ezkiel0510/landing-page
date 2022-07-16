@@ -1,13 +1,25 @@
 # Landing Page Project
 
+This is my second project when studying Front End Web Developer course from Udacity.
+It focus on manipulating HTML content by using Java Script.
+
 ## Table of Contents
 
-* [Instructions](#instructions)
+- [Instructions](#instructions)
+- [Content](#content)
 
 ## Instructions
 
-The starter project has some HTML and CSS styling to display a static version of the Landing Page project. You'll need to convert this project from a static project to an interactive one. This will require modifying the HTML and CSS files, but primarily the JavaScript file.
+This project includes **_3 files_**:
 
-To get started, open `js/app.js` and start building out the app's functionality
+> - index.html: index page
+> - css/styles.css: style sheet
+> - js/app.js: main file of this course
 
-For specific, detailed instructions, look at the project instructions in the Udacity Classroom.
+## Content
+
+What can you do in this project?
+
+- When you add a new section to an HTML page, an item will be created in the navigation bar automatically.
+- When you click menu item the browser will scroll to specific section smoothly.
+- When you scroll to a section, the menu item will be turned to active state.

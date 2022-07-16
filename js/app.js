@@ -56,7 +56,9 @@ function findLink(sec) {
 
 // Scroll to section
 function scrollToSection(sectionId) {
-  document.getElementById(sectionId).scrollIntoView();
+  document
+    .getElementById(sectionId)
+    .scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
 }
 
 // Add class 'active' to section when near top of viewport
