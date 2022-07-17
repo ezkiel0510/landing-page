@@ -33,13 +33,19 @@ const sections = document.getElementsByTagName("section");
 // Check if the section is in viewport
 function isSectionInViewport(section) {
   const box = section.getBoundingClientRect();
-  return (
-    box.top >= 0 &&
-    box.left >= 0 &&
-    box.bottom <=
-      (window.innerHeight || document.documentElement.clientHeight) &&
-    box.right <= (window.innerWidth || document.documentElement.clientWidth)
-  );
+  const res = window.screen.availWidth;
+
+  if (res > 900) {
+    return (
+      box.top >= 0 &&
+      box.left >= 0 &&
+      box.bottom <=
+        (window.innerHeight || document.documentElement.clientHeight) &&
+      box.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+  } else {
+    return box.top <= 150 && box.bottom >= 150;
+  }
 }
 
 // Check if the menu item have a same class as current section in viewport
@@ -56,9 +62,7 @@ function findLink(sec) {
 
 // Scroll to section
 function scrollToSection(sectionId) {
-  document
-    .getElementById(sectionId)
-    .scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
+  document.getElementById(sectionId).scrollIntoView({ behavior: "smooth" });
 }
 
 // Add class 'active' to section when near top of viewport
@@ -104,6 +108,19 @@ document.addEventListener("DOMContentLoaded", function createMenu() {
 document.addEventListener("scroll", function () {
   makeActive();
 });
+
+// Testing Function
+// document.addEventListener("click", function () {
+//   for (const section of sections) {
+//     const box = section.getBoundingClientRect();
+//     console.log("box :>> ", box);
+//     if (isSectionInViewport(section)) {
+//       console.log(`${section.id} in view port`);
+//     } else {
+//       console.log(`${section.id} out view port`);
+//     }
+//   }
+// });
 
 /**
  * End Main Functions
